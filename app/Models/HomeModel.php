@@ -18,35 +18,7 @@ class HomeModel
         $result = $this->database->queryAll('SELECT * FROM company');
         return $result;
     }
-    /*
-    public function getDeptByCompany($company)
-    {
-        $result = $this->database->queryAll(
-                'SELECT * FROM department WHERE company_id = ?', $company
-                );
-        return $result;
-    }
     
-    public function getPositionByDepartment($department)
-    {
-        $result = $this->database->queryAll(
-                'SELECT * FROM position WHERE department_id = ?', $department
-                );
-        return $result;
-    }
-    
-    public function getAllUserCompany($id)
-    {
-        $result = $this->database->queryAll('SELECT * FROM company WHERE id = ?', $id);
-        return $result;
-    }
-    
-    public function getCompanyNameById($id)
-    {
-        $result = $this->database->querySingle('SELECT company_name FROM company WHERE id = ?', $id);
-        return $result;
-    }
-    */
     public function getAllRecordsCompany()
     {
         $result = $this->database->queryAll(
@@ -82,14 +54,3 @@ class HomeModel
         return $result;
     }
 }
-
-
-/*
-  
-  
-SELECT c.company_name AS company_name, d.department_name AS department_name, p.position_name AS position_name
-FROM company c
-LEFT JOIN department d ON d.company_id = c.ID
-LEFT JOIN position p ON p.department_id = d.ID 
-  
- */
